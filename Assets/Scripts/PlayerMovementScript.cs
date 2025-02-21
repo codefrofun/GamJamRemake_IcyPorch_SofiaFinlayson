@@ -10,6 +10,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] public float boxPlayer = 1.6f;
     [SerializeField] public float playerSpeed = 4f;
+    [SerializeField] public float jumpForce = 10f;
+    [SerializeField] private bool isGrounded;
     private float moveDirection = 1f;
 
     private void Start()
@@ -28,6 +30,7 @@ public class PlayerMovementScript : MonoBehaviour
     private void Update()
     {
         MovePlayerOnX();
+        HandleJump();
         HandleRestart();
     }
 
@@ -35,10 +38,23 @@ public class PlayerMovementScript : MonoBehaviour
     // X for moving forward + jump
     void MovePlayerOnX()
     {
-        Debug.Log("Player has started moving!");
-        float moveInput = moveDirection * playerSpeed;
-        playerRigidbody.velocity = new Vector2(moveInput, playerRigidbody.velocity.y);
+        if(Input.GetKey(KeyCode.X)) // Use get key not getkeydown for a continuation of movement
+        {
+            Debug.Log("Player has started moving!");
+            float moveInput = moveDirection * playerSpeed;
+            playerRigidbody.velocity = new Vector2(moveInput, playerRigidbody.velocity.y);
+        }
     }
+    void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Debug.Log("Player Jumped!");
+            playerRigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // Applies upward force
+            isGrounded = false;
+        }
+    }
+
 
 
     /// <summary>
@@ -51,7 +67,12 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            moveDirection = -moveDirection;
+            moveDirection = -moveDirection; // switches direction
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true; // Checks if player is on the ground, giving the ability to jump without jumping on air
         }
     }
 
@@ -80,6 +101,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
+    // Logic for level reset - CREATE SCENE MANAGER SCRIPT
     void RestartLevel()
     {
         Scene currentScene = SceneManager.GetActiveScene();
