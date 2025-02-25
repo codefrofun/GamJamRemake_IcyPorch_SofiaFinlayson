@@ -36,6 +36,8 @@ public class PlayerMovementScript : MonoBehaviour
         }
             
         HandleJump();
+        MagnetFreezePlayer(false);
+        FreezeMagent();
         HandleRestart();
     }
 
@@ -63,6 +65,14 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
+    void FreezeMagent()
+    {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            MagnetFreezePlayer(true);
+        }
+    }
+
 
 
     /// <summary>
@@ -82,6 +92,13 @@ public class PlayerMovementScript : MonoBehaviour
         {
             isGrounded = true; // Checks if player is on the ground, giving the ability to jump without jumping on air
             Debug.Log("Player is grounded!");
+        }
+
+        if (collision.gameObject.CompareTag("Magnet"))
+        {
+           MagnetFreezePlayer(true);
+           //isGrounded = true; 
+           Debug.Log("Player is frozen on magnet!");
         }
     }
 
@@ -114,6 +131,6 @@ public class PlayerMovementScript : MonoBehaviour
     void RestartLevel()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.name); // Relaod current scene CHANGE NAME ONCE APPLICABLE
+        SceneManager.LoadScene(currentScene.name); // Reload current scene CHANGE NAME ONCE APPLICABLE
     }
 }
