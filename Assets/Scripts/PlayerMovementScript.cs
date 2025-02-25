@@ -36,8 +36,8 @@ public class PlayerMovementScript : MonoBehaviour
         }
             
         HandleJump();
-        MagnetFreezePlayer(false);
-        FreezeMagent();
+        //MagnetFreezePlayer(false);
+        //FreezeMagnet();
         HandleRestart();
     }
 
@@ -65,13 +65,13 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    void FreezeMagent()
+    /* void FreezeMagnet()
     {
         if(Input.GetKeyDown(KeyCode.C))
         {
             MagnetFreezePlayer(true);
         }
-    }
+    } */
 
 
 
@@ -94,12 +94,12 @@ public class PlayerMovementScript : MonoBehaviour
             Debug.Log("Player is grounded!");
         }
 
-        if (collision.gameObject.CompareTag("Magnet"))
+        /* if (collision.gameObject.CompareTag("Magnet"))
         {
            MagnetFreezePlayer(true);
            //isGrounded = true; 
            Debug.Log("Player is frozen on magnet!");
-        }
+        } */
     }
 
     /// <summary>
@@ -114,6 +114,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
         else
         {
+            // Freeze X? Uncomment code below
             playerRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
     }
