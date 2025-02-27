@@ -101,23 +101,7 @@ public class PlayerMovementScript : MonoBehaviour
            Debug.Log("Player is frozen on magnet!");
         } */
     }
-
-    /// <summary>
-    /// Pressing "C" will freeze player (in place) on available magnet
-    /// </summary>
-    /// <param name="isMagnetActive"></param>
-    void MagnetFreezePlayer(bool isMagnetActive)
-    {
-        if(isMagnetActive)
-        {
-            playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-        else
-        {
-            // Freeze X? Uncomment code below
-            playerRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
-        }
-    }
+    
 
     // R to restart level after player death
     void HandleRestart()
