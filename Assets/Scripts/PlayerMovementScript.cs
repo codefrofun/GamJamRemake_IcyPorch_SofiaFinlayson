@@ -10,11 +10,13 @@ public class PlayerMovementScript : MonoBehaviour
     public Rigidbody2D playerRigidbody;
 
     [SerializeField] public float boxPlayer = 1.6f;
-    [SerializeField] public float playerSpeed = 4f;
+    [SerializeField] public float playerSpeed = 1.5f;
     [SerializeField] public float jumpForce = 5f;
     [SerializeField] private bool isGrounded;
     private bool isMoving = false;
     private float moveDirection = 1f;
+
+    // Add audio logic
 
     private void Start()
     {

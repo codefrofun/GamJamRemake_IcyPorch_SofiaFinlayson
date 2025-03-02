@@ -14,7 +14,8 @@ public class MagnetScript : MonoBehaviour
     {
         playerRigidbody = magnet.GetComponent<Rigidbody2D>();
         magnetCollider = magnet.GetComponent<Collider2D>();
-        magnetCollider.enabled = false;
+        //magnetCollider.enabled = false;
+
         magnet.GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
@@ -48,7 +49,7 @@ public class MagnetScript : MonoBehaviour
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         magnetCollider.enabled = true;
 
-        Debug.Log("Player is frozen, magnet set to magnet layer");
+        Debug.Log("Player is frozen");
     }
 
     void UnfreezePlayer()

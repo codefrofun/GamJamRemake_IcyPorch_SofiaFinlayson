@@ -101,9 +101,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 1000
-        height: 1000
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f8108d750e69c408f2a82c7a652d45
-      internalID: -31604356
+      spriteID: f60b4c63b77b57e4a88b8968a78c4f2f
+      internalID: 540734000
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: Magnet Anim_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a54c60c0392884fb6f2a00dd9d303c
-      internalID: 551795212
+      spriteID: 87c745d3a46829e4e8ad681bb30e0dd1
+      internalID: -2078949521
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: Magnet Anim_2
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab91c4939e5eaab4ba4940790fff91f5
-      internalID: 954233236
+      spriteID: 6dfb33c8758b4e94fb66048551e223f0
+      internalID: 39502679
       vertices: []
       indices: 
       edges: []
@@ -163,10 +163,10 @@ TextureImporter:
       name: Magnet Anim_3
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d13552358bec1654b80c49945df13efa
-      internalID: 159050331
+      spriteID: e889ea8a1e9e6464aa77de902b8876f6
+      internalID: 1547124991
       vertices: []
       indices: 
       edges: []
@@ -184,10 +184,10 @@ TextureImporter:
       name: Magnet Anim_4
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7fa05464afd399498bdd6c43dc301b9
-      internalID: 997310052
+      spriteID: 23496ecfa2e5b944187a1c1318a8d7d6
+      internalID: 972746540
       vertices: []
       indices: 
       edges: []
@@ -205,10 +205,10 @@ TextureImporter:
       name: Magnet Anim_5
       rect:
         serializedVersion: 2
-        x: 5000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 5120
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad8e2d42e89fa3c48bfe275e6e1db9f4
-      internalID: 149224610
+      spriteID: 9b665c47e58f51d4eba19ba468a51e8b
+      internalID: -199037621
       vertices: []
       indices: 
       edges: []
@@ -226,10 +226,10 @@ TextureImporter:
       name: Magnet Anim_6
       rect:
         serializedVersion: 2
-        x: 6000
-        y: 2
-        width: 1000
-        height: 1000
+        x: 6144
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81028259bfe1f794186aef0c19992c5f
-      internalID: 517065279
+      spriteID: 52d7f677d87bb624aa425cea334c77e9
+      internalID: 1234772845
       vertices: []
       indices: 
       edges: []
@@ -254,13 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Magnet Anim_0: -31604356
-      Magnet Anim_1: 551795212
-      Magnet Anim_2: 954233236
-      Magnet Anim_3: 159050331
-      Magnet Anim_4: 997310052
-      Magnet Anim_5: 149224610
-      Magnet Anim_6: 517065279
+      Magnet Anim_0: 540734000
+      Magnet Anim_1: -2078949521
+      Magnet Anim_2: 39502679
+      Magnet Anim_3: 1547124991
+      Magnet Anim_4: 972746540
+      Magnet Anim_5: -199037621
+      Magnet Anim_6: 1234772845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
