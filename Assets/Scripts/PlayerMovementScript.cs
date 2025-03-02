@@ -36,8 +36,6 @@ public class PlayerMovementScript : MonoBehaviour
         }
             
         HandleJump();
-        //MagnetFreezePlayer(false);
-        //FreezeMagnet();
         HandleRestart();
     }
 
@@ -65,15 +63,6 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    /* void FreezeMagnet()
-    {
-        if(Input.GetKeyDown(KeyCode.C))
-        {
-            MagnetFreezePlayer(true);
-        }
-    } */
-
-
 
     /// <summary>
     /// Collision with walls so that player automatically turns, 
@@ -93,13 +82,6 @@ public class PlayerMovementScript : MonoBehaviour
             isGrounded = true; // Checks if player is on the ground, giving the ability to jump without jumping on air
             Debug.Log("Player is grounded!");
         }
-
-        /* if (collision.gameObject.CompareTag("Magnet"))
-        {
-           MagnetFreezePlayer(true);
-           //isGrounded = true; 
-           Debug.Log("Player is frozen on magnet!");
-        } */
     }
     
 
