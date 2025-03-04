@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript Instance { get; private set; }
 
-    public LevelManagerScript levelManager;
+    // Create instance of player
+
+    public SceneManagerScript sceneManager;
 
     private void Awake()
     {

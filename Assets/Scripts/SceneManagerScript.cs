@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    public void LoadSceneToSpawnPosition(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene loaded: " + scene.name);
+    }
+
 }

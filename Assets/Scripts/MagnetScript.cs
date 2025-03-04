@@ -14,7 +14,7 @@ public class MagnetScript : MonoBehaviour
     {
         playerRigidbody = magnet.GetComponent<Rigidbody2D>();
         magnetCollider = magnet.GetComponent<Collider2D>();
-        //magnetCollider.enabled = false;
+        magnetCollider.enabled = false;
 
         magnet.GetComponent<Rigidbody2D>().gravityScale = 0;
     }
@@ -66,6 +66,7 @@ public class MagnetScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //while ()
         if (other.CompareTag("Player") && !isFrozen)
         {
             Debug.Log("Colliding with player");
