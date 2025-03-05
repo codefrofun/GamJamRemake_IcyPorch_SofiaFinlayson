@@ -15,13 +15,12 @@ public class MagnetScript : MonoBehaviour
         playerRigidbody = magnet.GetComponent<Rigidbody2D>();
         magnetCollider = magnet.GetComponent<Collider2D>();
         magnetCollider.enabled = false;
-
         magnet.GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             ToggleFreeze();
         }
@@ -31,7 +30,7 @@ public class MagnetScript : MonoBehaviour
     void ToggleFreeze()
     {
         // Freeze and unfreeze player
-        if(isFrozen)
+        if (isFrozen)
         {
             UnfreezePlayer();
         }
@@ -49,7 +48,7 @@ public class MagnetScript : MonoBehaviour
         playerRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         magnetCollider.enabled = true;
 
-        Debug.Log("Player is frozen");
+        Debug.Log("Player is frozen, magnet set to magnet layer");
     }
 
     void UnfreezePlayer()
@@ -58,7 +57,7 @@ public class MagnetScript : MonoBehaviour
         playerRigidbody.isKinematic = false;
         playerRigidbody.constraints = RigidbodyConstraints2D.None;
         magnetCollider.enabled = false;
-        
+
         magnet.GetComponent<Rigidbody2D>().gravityScale = 0;
 
         Debug.Log("Player is unfrozen");
@@ -66,7 +65,6 @@ public class MagnetScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //while ()
         if (other.CompareTag("Player") && !isFrozen)
         {
             Debug.Log("Colliding with player");

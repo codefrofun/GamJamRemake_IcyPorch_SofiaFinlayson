@@ -13,7 +13,6 @@ public class SceneManagerScript : MonoBehaviour
 
     private void OnDisable()
     {
-
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 

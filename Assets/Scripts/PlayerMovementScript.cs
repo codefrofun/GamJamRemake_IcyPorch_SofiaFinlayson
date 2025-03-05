@@ -14,14 +14,17 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] public float jumpForce = 5f;
     [SerializeField] private bool isGrounded;
     private bool isMoving = false;
-    private float moveDirection = 1f;
+    public float moveDirection = 1f;
 
     // Add audio logic
 
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
-
+        if (playerRigidbody == null)
+        {
+            Debug.LogError("Rigidbody2D not found on player object!");
+        }
         //playerRigidbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
     }
@@ -52,6 +55,7 @@ public class PlayerMovementScript : MonoBehaviour
             playerRigidbody.velocity = new Vector2(playerSpeed, playerRigidbody.velocity.y);
         }
     }
+
     void HandleJump()
     {
         if (Input.GetKeyDown(KeyCode.X))
@@ -66,6 +70,23 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
 
+    public void PlayerSwitchDirection()
+    {
+        Debug.Log("I hit a wall");
+        
+        if (playerSpeed == -playerSpeed)
+        {
+            playerSpeed = +playerSpeed;
+        }
+        else
+        {
+            playerSpeed = -playerSpeed;
+        }
+        playerRigidbody.velocity = new Vector2(playerSpeed, playerRigidbody.velocity.y);
+        //playerRigidbody.velocity = new Vector2(moveDirection * playerSpeed, playerRigidbody.velocity.y);
+    }
+
+
     /// <summary>
     /// Collision with walls so that player automatically turns, 
     /// does not go through walls, follows path. 
@@ -77,6 +98,7 @@ public class PlayerMovementScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             moveDirection = -moveDirection; // switches direction
+            Debug.Log("Player has collided with wall, will now switch directions");
         }
 
         if (collision.gameObject.CompareTag("Ground"))
