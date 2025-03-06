@@ -9,7 +9,6 @@ public class PlayerSpawn : MonoBehaviour
     private GameObject clone;
     private int playerCount;
     public int maxPlayerCount;
-
     public float delayTime = 2f;
 
     private void Start()
@@ -35,6 +34,9 @@ public class PlayerSpawn : MonoBehaviour
     private IEnumerator ShowBlockAfterDelay()
     {
         yield return new WaitForSeconds(delayTime);
-        player = Instantiate(player, transform.position, Quaternion.identity);
+        if (player != null)
+        {
+            player = Instantiate(player, transform.position, Quaternion.identity);
+        }
     }
 }

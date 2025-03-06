@@ -46,7 +46,7 @@ public class GameStateManager : MonoBehaviour
     private void Update()
     {
         Debug.Log(currentState);
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             if (currentState == GameState.MainMenu_State)
             {
