@@ -5,11 +5,14 @@ using UnityEngine;
 public class AppearingBlockScript : MonoBehaviour
 {
     public GameObject block;
+    public GameObject newBlock;
     public float delayTime = 1f;
+    private bool isDestroyed = false;
 
     private void Start()
     {
-        block.SetActive(false);
+        block.SetActive(true);
+        newBlock.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -21,9 +24,24 @@ public class AppearingBlockScript : MonoBehaviour
         }
     }
 
+    void BreakBlock()
+    {
+        isDestroyed = true;
+
+        Destroy(gameObject);
+
+        Debug.Log("Block destroyed!");
+
+        if (newBlock != null)
+        {
+            newBlock.SetActive(true);
+        }
+    }
+
     private IEnumerator ShowBlockAfterDelay()
     {
         yield return new WaitForSeconds(delayTime);
-        block.SetActive(true);
+        block.SetActive(false);
+        BreakBlock();
     }
 }

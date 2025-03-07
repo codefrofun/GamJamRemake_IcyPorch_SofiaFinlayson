@@ -8,7 +8,13 @@ public class BreakingBlockScript : MonoBehaviour
 
     //public GameObject breakEffect;      with particle system?
 
-    //public AudioClip breakSound;
+    public AudioClip breakSound;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,6 +29,11 @@ public class BreakingBlockScript : MonoBehaviour
         if (isDestroyed) return; // Won't break block if already broken
 
         isDestroyed = true;
+
+        if (audioSource != null && breakSound != null)
+        {
+            audioSource.PlayOneShot(breakSound); // Play the sound once
+        }
 
         Destroy(gameObject);
 

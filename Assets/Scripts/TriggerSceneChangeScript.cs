@@ -8,6 +8,8 @@ public class TriggerSceneChangeScript : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private GameManagerScript gameManager;
 
+    public float delayTime = 1f;
+
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManagerScript>();
@@ -17,6 +19,7 @@ public class TriggerSceneChangeScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
             gameManager.sceneManager.LoadSceneToSpawnPosition(sceneName);
         }
     }
